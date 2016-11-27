@@ -1,7 +1,7 @@
 'use strict'
 
 const config = require("./config/config.js");
-const Bluebird = require("Bluebird");
+const Bluebird = require("bluebird");
 const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
