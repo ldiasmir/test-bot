@@ -2,6 +2,8 @@
 
 const ApiAi = require("apiai");
 
+const config = require("../config/config");
+
 class ApiAiClient {
 
   /**
@@ -46,7 +48,7 @@ class ApiAiClient {
 
   getSummary(reply) {
     const parameters = JSON.stringify(reply.parameters);
-    const summary = `${reply.fulfillment.speech} (intent: ${reply.action}, parameters: ${parameters})`;
+    const summary = `[api.ai] ${reply.fulfillment.speech} (intent: ${reply.action}, parameters: ${parameters})`;
     return summary;
   }
     
@@ -54,6 +56,6 @@ class ApiAiClient {
 
 module.exports = function Factory () {
   return new ApiAiClient({
-    clientToken: "80612ce5b58d4f89a2194d87162643b1"
+    clientToken: config.apiai.clientToken
   }); // Singleton;
 };

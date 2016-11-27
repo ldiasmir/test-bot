@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "robotic-sky-150512",
+  "private_key_id": "42ec9f9b028eb524a230735edcff2c2f0aa83729",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDuBezvKKKW75my\ne4vlF2I1X9Y3SnLCJGAHuppDNBnxrTafNzBOIzVXgVsBwOoIsDXvR6QwqLnbFBWh\nsvQHNw9jRUQTWjUOvLWus+azqJmJiK4oeHwUvAhl4PdS7N9t/087VS76yVlXa9f0\n03gmQCeUDiq3KEDFd70sV9IrkQcamPuRAkh/D3OXKNX820M/zG8FIHK96nOrN2qg\nq5lkKDHPaK8Qim242FwyTK1bNPSLRZ9UM2MX0sscw9iUML0kbPjJ9oBHJZ457eR6\nViZ3PbCzfgXLHpoa5FIal0bO395b3Rwe/CQHvNMvWr42PmTtT8NF/Dg4pruYGl4g\n3scie6N3AgMBAAECggEACX5nAusGASsxYDMZU1vpaOOXscDgbunwgp5oxMFxP3h/\nMz6KSLOSzxizvpApRYtxu0eKPv6b2ycj7b0ripYhoP4ERxlUAHB6dqtqSkQxS5EO\nEUMs/864LwgYFVCpYMPMLzuokgwx6hC9HmDI7A2nBnrCLWgHnVi3TOt70I0KUX8w\n6Atife+qtlI1Rq7f+FpDc6Qkjs5AloxjRcgG7H2SFmYuZenwimR3TnvG2NrYPS12\n/JOADBPYOUfZsIMdFfuAImXLlMbw/juyWHJKp/XO4azRlR3aBTZsNfJUdooRzMJe\n78i/gwfAw1+NxQm54kkqAsExMSskNYQiaiofszW7gQKBgQD59Tj1dxC1GIqLdHzr\nZcB25WeI9eNwHjhoq5GOPy5rPRpLl7FTOYH+9zQhhAtvhPgvdQ4Nk+YE8dXSo/br\nHXf3b2M19p79h2UR/hXO1rBfB+dx0Mn9AAJ/HMJ0v7sNTjIwsIzP/KGmdxf2UOi/\nPRXSoNv7n3CzkQEknwfRbtAuVwKBgQDzxtlVQJXkGj5a5fqVCdDWDVmzoPhiE6hz\ni2bBQFlNhx2KDH/wWmpfStrpy6LZ1V1JSBVoXCyZAfxsJWxk0jYFrEJmEmJqIYY4\nIIXEgV0NjwVQ/0hbxs+qNvjR+Vmq+UfXC7+B5faRSSwk4BhyLIAIKD1tI3YkKxrM\nYROxNpC/4QKBgQDxVKTQwktcPbyOFkMB17TyVl0XLCiSOGtIC9Y126SKn20C7Qul\nCdIMBErNzTppSp2A3GhcDZ64yXEjtXER4drRCDdmg51PtOiNbZ9Km5efuPbpuac7\nYUYHyhGpPPBxUT0+K0dZDFZabYOyKr383hJy0SJzl6XtiSPsYqretznCcwKBgDyS\nQBYqwhO3YZ78XdMCaV2GW6+CY7Ua5VQwYwvJjWbyF6jhijiSfrPGybYl3wT5OwCm\nZItVu88Y6zuD4Pb8NGgccTMjhkiQo+T2T8aPzis8Sjnh9Hy5XYgRuKmTp3AQGIWa\naa9BEI7w+4L+G5Ti8b0VIo4nrYc3HqWByX7S7AyBAoGBAIn7BrqG6FMCbXezpYZp\nFoGyo0wthxP4CUHkYdxSvMMPKFlMQF7rLPZHlGkMwVkhinejKDgka6eN8TTcXhba\nZLvsW11CBr2W2fjwCoWhG/LXCzQkiZQqhhtL5Q/yS5WrCUGGhCWpX2gLTWFJJ4kG\n+epVfw5/FvIv+b8x4XlsiNUH\n-----END PRIVATE KEY-----\n",
+  "client_email": "robotic-sky-150512@appspot.gserviceaccount.com",
+  "client_id": "105456083438461263192",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/robotic-sky-150512%40appspot.gserviceaccount.com"
+}
