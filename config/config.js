@@ -17,7 +17,24 @@ const environments = {
       subscriptionKey: "a43c4bb7ea5c46898f48ea0c70e8aa98"
     }
   },
-  production: { }
+  production: {
+    port: process.env.PORT || 80,
+    facebook: {
+      pageAccessToken: process.env.FB_ACCESS_TOKEN,
+      verifyToken: process.env.FB_VERIFY_TOKEN
+    },
+    google: {
+      projectId: process.env.GOOGLE_PROJECTID,
+      credentials: require("./key-file.json")
+    },
+    apiai: {
+      clientToken: process.env.APIAI_CLIENT_TOKEN
+    },
+    luis: {
+      appId: process.env.LUIS_APPID,
+      subscriptionKey: process.env.LUIS_SUBSCRIPTION_KEY
+    }
+  }
 };
 
 module.exports = environments[process.env.NODE_ENV || "development"];
