@@ -10,7 +10,7 @@ const co = Bluebird.coroutine;
 
 const google = require("./services/googleSpeech")();
 const apiai = require("./services/apiai")();
-const luis = require("./services/luis")();
+// const luis = require("./services/luis")();
 
 app.set('port', config.port)
 
@@ -63,16 +63,13 @@ function processEvent(event) {
 				text = yield google.recognizeAudioByUrl(url);
 				yield sendTextMessage(sender, `[speech] ${text}`)
 			}
-		}
-		
-		// send text to NLU services
-		if (text) {
+		} else if (text) {
 
 			const apiaiRes = yield apiai.recognize(text);
 			yield sendTextMessage(sender, apiai.getSummary(apiaiRes));
 
-			const luisRes = yield luis.recognize(text);
-			yield sendTextMessage(sender, luis.getSummary(luisRes));
+			// const luisRes = yield luis.recognize(text);
+			// yield sendTextMessage(sender, luis.getSummary(luisRes));
 
 		} else {
 			yield sendTextMessage(sender, "Sorry?")
