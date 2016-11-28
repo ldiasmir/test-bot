@@ -51,29 +51,29 @@ app.post('/webhook/', function (req, res) {
 function processEvent(event) {
 	return co(function* () {
 
-		let sender = event.sender;
 		let text = (event.message || {}).text;
 		const attachments = (event.message || {}).attachments;
 
+		let reply = "Sorry?";
+
 		// if audio attachments => try to recognize
 		if (attachments) {
+
 			const attachment = attachments[0];
 			if (attachment.type === "audio") {
-				const url = attachment.payload.url;
-				text = yield google.recognizeAudioByUrl(url);
-				yield sendTextMessage(sender, `[speech] ${text}`)
+				const googleRes = yield google.recognizeAudioByUrl(attachment.payload.url);
+				reply = google.getSummary(googleRes);
 			}
+
 		} else if (text) {
 
 			const apiaiRes = yield apiai.recognize(text);
-			yield sendTextMessage(sender, apiai.getSummary(apiaiRes));
+			reply = apiai.getSummary(apiaiRes);
 
-			// const luisRes = yield luis.recognize(text);
-			// yield sendTextMessage(sender, luis.getSummary(luisRes));
-
-		} else {
-			yield sendTextMessage(sender, "Sorry?")
 		}
+
+		yield sendTextMessage(event.sender, reply);
+
 	})();
 }
 

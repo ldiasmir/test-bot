@@ -49,7 +49,8 @@ class GoogleSpeechApiClient {
             languageCode: languageCode || this.defaultLanguageCode
           },
           singleUtterance: false,
-          interimResults: false
+          interimResults: false,
+          verbose: true
         }))
         .on("error", err => reject(err))
         .on("data", data => {
@@ -79,6 +80,12 @@ class GoogleSpeechApiClient {
 
     });
 
+  }
+
+  getSummary(reply) {
+    const str = JSON.stringify(reply);
+    const summary = `[speech] ${str}`;
+    return summary;
   }
 
   _getStream(url) {
