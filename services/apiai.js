@@ -25,12 +25,10 @@ class ApiAiClient {
    * @public
    * @returns {Object}
    */
-  recognize(userInput) {
+  recognize(sessionId, userInput) {
     
     return new Promise((resolve, reject) => {
-      var request = this.client.textRequest(userInput, {
-        sessionId: 'dummy'
-      });
+      var request = this.client.textRequest(userInput, { sessionId });
       request.on("response", response => {
         if (response.status.code !== 200 || response.status.errorType !== "success") {
           return reject(new Error(`api.ai call failed with status code: ${response.status.code}, errorType: ${response.status.errorType}`));

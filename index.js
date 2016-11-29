@@ -67,7 +67,8 @@ function processEvent(event) {
 
 		} else if (text) {
 
-			const apiaiRes = yield apiai.recognize(text);
+			const sessionId = event.sender.id; // use FB page-scoped user ID as sessionId for api.ai
+			const apiaiRes = yield apiai.recognize(sessionId, text);
 			reply = apiai.getSummary(apiaiRes);
 
 		}
