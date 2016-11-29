@@ -79,27 +79,45 @@ function processEvent(event) {
 }
 
 function sendTextMessage(sender, text) {
-	return new Promise((resolve, reject) => {
 
-		let messageData = { text: text };
-		
-		request({
-			url: 'https://graph.facebook.com/v2.6/me/messages',
-			qs: { access_token: config.facebook.pageAccessToken },
-			method: 'POST',
-			json: {
-				recipient: { id: sender.id },
-				message: messageData,
+	return co(function* () {
+
+		const FB_MAX_MESSAGE_LENGTH = 200;
+
+		if (text.length > FB_MAX_MESSAGE_LENGTH) {
+
+			const chunks = text.match(new RegExp(`.{1,${FB_MAX_MESSAGE_LENGTH}}`, "g"));
+			for (let chunk of chunks) {
+				yield _send(chunk);
 			}
-		}, function(error, response, body) {
-			if (error) {
-				return reject(error);
-			} else if (response.body.error) {
-				return reject(response.body.error);
-			}
-			resolve();
+
+		} else {
+			yield _send(text);
+		}
+
+	})();
+
+	function _send(text) {
+		return new Promise((resolve, reject) => {
+			request({
+				url: 'https://graph.facebook.com/v2.6/me/messages',
+				qs: { access_token: config.facebook.pageAccessToken },
+				method: 'POST',
+				json: {
+					recipient: { id: sender.id },
+					message: { text: text },
+				}
+			}, function(error, response, body) {
+				if (error) {
+					return reject(error);
+				} else if (response.body.error) {
+					return reject(response.body.error);
+				}
+				resolve();
+			});
 		});
-	});
+	}
+
 }
 
 // spin spin sugar
